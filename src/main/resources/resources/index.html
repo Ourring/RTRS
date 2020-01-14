@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="Images/favicon.ico">
+    <link rel="stylesheet" href="CSS/css-comment.css">
+    <link rel="stylesheet" href="CSS/index-c.css">
+    <link rel="stylesheet" href="CSS/slide-unlock.css">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <title>重修考试报名系统 - RTRS</title>
+</head>
+<body>
+    <div class="theme">
+        <div class="theme-header">
+            <img src="Images/logo.png" alt="">
+        </div>
+        <div class="theme-panel">
+            <div class="panel-main">
+                <div class="main-s">
+                    <div class="s-title" id="s-title">账号登录</div>
+                    <div class="s-account in" id="s-account">
+                        <input type="text" placeholder="学号/员工号">
+                    </div>
+                    
+                    <div class="s-password in" id="password">
+                        <input type="password" placeholder="密码">
+                    </div>
+                    
+                    <div id="slider">
+                        <div id="slider_bg"></div>
+                        <span id="label">>></span> <span id="labelTip">拖动滑块验证</span>
+                    </div><br>
+                    <div class="s-no-password" id="s-no-password"><a href="">忘记密码？</a></div>
+                    <div class="s-button" id="login-button"><a href="#" class="animated-button thar-three">登录</a></div>
+                    <div class="s-button" id="regis-button"><a href="#" class="animated-button thar-three">注册</a></div>
+                </div>
+                <div class="main-x">
+                    <span id="move-reg">首次登录？<a href="javascript:void(0);" onclick="register()">注册</a></span>
+                    <span id="move-log">已有账号？<a href="javascript:void(0);" onclick="reLogin()">登录</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+    <script src="JS/index.js"></script>
+    <script src="JS/jquery.slideunlock.js"></script>
+    <script>
+        $(function () {
+            var slider = new SliderUnlock("#slider",{
+                    successLabelTip : "验证成功"	
+                },function(){
+                    console.log("验证成功");
+                    window.location.href="#";
+                    //以下四行设置恢复初始，不需要可以删除
+                    /*setTimeout(function(){
+                        $("#labelTip").html("拖动滑块验证");
+                        $("#labelTip").css("color","#787878");
+                        },2000);
+                    slider.init();*/
+                });
+            slider.init();
+        })
+    </script> 
+</html>

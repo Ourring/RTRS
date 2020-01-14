@@ -1,0 +1,6 @@
+admin:
+  id: "shigure"
+  password: "123456"
+student:
+  name: "shimakaze"
+  age: "12"
